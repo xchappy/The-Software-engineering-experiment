@@ -1,5 +1,9 @@
 package me.dm7.barcodescanner.zxing.sample;
 
+
+
+
+
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -12,9 +16,13 @@ import android.view.View;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    private static final int IMAGE = 1;
     private static final int ZXING_CAMERA_PERMISSION = 1;
     private Class<?> mClss;
 
+    public int addOfmain(int a,int b) {
+        return a+b;
+    }
     @Override
     public void onCreate(Bundle state) {
         super.onCreate(state);
@@ -26,10 +34,16 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
     }
+    public void launchPhotoActivity(View v) {
+        launchActivity(Main2Activity.class);
+    }
+
+
 
     public void launchSimpleActivity(View v) {
         launchActivity(SimpleScannerActivity.class);
     }
+    //SimpleScannerActivity
 
     public void launchSimpleFragmentActivity(View v) {
         launchActivity(SimpleScannerFragmentActivity.class);
